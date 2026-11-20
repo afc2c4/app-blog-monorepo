@@ -1,0 +1,16 @@
+{
+  "name": "blog-app-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "dev:server": "npm run dev -w server",
+    "dev:client": "npm run dev -w client",
+    "test:server": "npm run test -w server",
+    "test:client": "npm run test -w client",
+    "test": "npm run test --workspaces --if-present"
+  }
+}
