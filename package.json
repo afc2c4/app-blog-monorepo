@@ -18,7 +18,8 @@
     "test:all": "npm run test && npm run test:integration && npm run test:e2e",
     "test:e2e:headed": "playwright test --headed",
     "test:e2e:debug": "playwright test --debug",
-    "test:e2e:report": "playwright show-report"
+    "test:e2e:report": "playwright show-report",
+    "test:watch": "concurrently \"npm run test:server -- --watch\" \"npm run test:client -- --watch\""
   },
   "devDependencies": {
     "@playwright/test": "^1.65.1",
