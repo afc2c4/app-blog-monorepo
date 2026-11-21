@@ -81,5 +81,8 @@ export function createPostsRepository(filePath) {
       await writeAll(posts)
       return true
     },
+    async reset() {
+      await writeAll([])
+    },
   }
 }

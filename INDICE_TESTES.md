@@ -1,30 +1,49 @@
-# 📑 Índice Completo - Testes Unitários
+# 📑 Índice Completo - Estratégia de Testes Automatizados (Unit → Integration → E2E)
 
 ## 🎯 Comece Aqui!
 
 Se você é novo no projeto, leia nesta ordem:
 
-1. **📄 [TESTES_README.md](./TESTES_README.md)** ← **COMECE AQUI** (5 min)
-   - Visão geral rápida
-   - Status: 76 testes passando
-   - Quick start
+1. **🏔️ [PYRAMID_SUMMARY.md](./PYRAMID_SUMMARY.md)** ← **COMECE AQUI** (10 min)
+   - Visão geral piramidal completa
+   - 121 testes total (unit + integration + E2E)
+   - Quick start para rodar tudo
 
-2. **📖 [TESTING_GUIDE.md](./TESTING_GUIDE.md)** (20 min)
+2. **📄 [TESTES_README.md](./TESTES_README.md)** (5 min)
+   - Resumo rápido dos testes unitários
+   - Status: 77 testes unitários ✓
+
+3. **📖 [TESTING_GUIDE.md](./TESTING_GUIDE.md)** (20 min)
    - Arquitetura completa (5 camadas)
    - Padrões de isolamento
    - Exemplos de código
 
-3. **🎯 [MOCKS_GUIDE.md](./MOCKS_GUIDE.md)** (15 min)
+4. **🎯 [MOCKS_GUIDE.md](./MOCKS_GUIDE.md)** (15 min)
    - Como usar mocks
    - Padrões práticos
    - Armadilhas comuns
 
-4. **🚀 [RUNNING_TESTS_GUIDE.md](./RUNNING_TESTS_GUIDE.md)** (10 min)
+5. **🚀 [RUNNING_TESTS_GUIDE.md](./RUNNING_TESTS_GUIDE.md)** (10 min)
    - Como rodar testes
    - Debugar falhas
    - Otimizar performance
 
-5. **📋 [TESTES_CRIADOS.md](./TESTES_CRIADOS.md)** (5 min)
+6. **🔗 [AUTOMATION_STRATEGY.md](./AUTOMATION_STRATEGY.md)** ← **NEW** (15 min)
+   - Estratégia de automação
+   - Redução estratégica de mocks (3 níveis)
+   - Mapeamento de cenários unit → integration → E2E
+
+7. **✅ [INTEGRATION_TESTS.md](./INTEGRATION_TESTS.md)** ← **NEW** (10 min)
+   - 19 testes de integração
+   - Arquivo real (sem mocks de repositório)
+   - Fluxos completos CRUD
+
+8. **🌍 [E2E_TESTS.md](./E2E_TESTS.md)** ← **NEW** (10 min)
+   - 25 testes E2E com Playwright
+   - Navegador real (sem mocks)
+   - Fluxos de usuário completos
+
+9. **📋 [TESTES_CRIADOS.md](./TESTES_CRIADOS.md)** (5 min)
    - Resumo do que foi criado
    - Estatísticas finais
 
@@ -36,13 +55,17 @@ Se você é novo no projeto, leia nesta ordem:
 app-blog-monorepo/
 ├── 📚 Documentação de Testes (Leia!)
 │   ├── INDICE_TESTES.md                  ← Você está aqui
-│   ├── TESTES_README.md                  ← Comece aqui (sumário)
+│   ├── PYRAMID_SUMMARY.md                ← Visão completa (NEW!)
+│   ├── AUTOMATION_STRATEGY.md            ← Estratégia (NEW!)
+│   ├── TESTES_README.md                  ← Sumário unitários
 │   ├── TESTING_GUIDE.md                  ← Arquitetura completa
 │   ├── MOCKS_GUIDE.md                    ← Como usar mocks
 │   ├── RUNNING_TESTS_GUIDE.md            ← Como rodar/debugar
+│   ├── INTEGRATION_TESTS.md              ← Integração (NEW!)
+│   ├── E2E_TESTS.md                      ← E2E (NEW!)
 │   └── TESTES_CRIADOS.md                 ← Resumo criado
 │
-├── 🎨 Frontend (Client)
+├── 🎨 Frontend (Client) - 18 testes unitários
 │   └── src/
 │       ├── services/
 │       │   ├── api.js                    (service real)
@@ -53,14 +76,25 @@ app-blog-monorepo/
 │       └── test/
 │           └── 🧪 setup.js               (configuração global)
 │
-└── 🔧 Backend (Server)
-    └── src/
-        ├── posts.service.js              (lógica real)
-        ├── 🧪 posts.service.test.js      (18 testes - VEJA!)
-        ├── posts.routes.js               (rotas reais)
-        ├── 🧪 posts.routes.test.js       (18 testes - VEJA!)
-        ├── posts.repository.js           (persistência real)
-        └── 🧪 posts.repository.test.js   (22 testes - VEJA!)
+├── 🔧 Backend - 59 testes (77 unitários + 19 integração)
+│   └── src/
+│       ├── posts.service.js              (lógica real)
+│       ├── 🧪 posts.service.test.js      (18 testes unitários - VEJA!)
+│       ├── posts.routes.js               (rotas reais)
+│       ├── 🧪 posts.routes.test.js       (18 testes unitários - VEJA!)
+│       ├── posts.repository.js           (persistência real)
+│       ├── 🧪 posts.repository.test.js   (22 testes unitários - VEJA!)
+│       └── 🧪 posts.integration.test.js  (19 testes integração - NEW!)
+│
+├── 🌍 E2E Tests - 25 testes (NEW!)
+│   └── tests/e2e/
+│       └── 🧪 posts.spec.js              (25 testes E2E com Playwright)
+│
+├── 🎬 Configuração
+│   ├── playwright.config.js              (Config E2E - NEW!)
+│   ├── package.json                      (Scripts - ATUALIZADO!)
+│   └── vitest.config.js                  (Config Unit/Integration)
+```
 ```
 
 ---

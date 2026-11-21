@@ -49,5 +49,15 @@ export function createPostRoutes(repo) {
     }
   })
 
+  // Reset endpoint for testing
+  router.post('/api/posts/reset', async (_req, res, next) => {
+    try {
+      await repo.reset()
+      res.json({ message: 'Posts resetados com sucesso' })
+    } catch (err) {
+      next(err)
+    }
+  })
+
   return router
 }
