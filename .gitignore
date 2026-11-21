@@ -2,3 +2,4 @@ node_modules/
 server/src/data/posts.json
 *.log
 README.md
+documentação/
